@@ -12,7 +12,7 @@ import FoodItem from './components/FoodItem.jsx';
 ReactDOM.createRoot(document.getElementById("root")).render(
 
 
-  <BrowserRouter basename="/vite-react-deploy"> 
+  <BrowserRouter basename={import.meta.env.BASE_URL}> 
   <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<Page />} />
