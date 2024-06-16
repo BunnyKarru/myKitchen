@@ -1,6 +1,6 @@
 import React from 'react';
-
-import backgroundImage from '../assets/sadplate.png'
+import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/sadplate.png';
 
 const NoResultsPage = () => {
   return (
@@ -13,7 +13,7 @@ const NoResultsPage = () => {
           <li>Try searching for different keywords or categories.</li>
           <li>Our database might not have the recipe you are looking for.</li>
         </ul>
-        <p className="text-lg text-gray-600">Please <a href="/" className="text-blue-500 hover:text-blue-700">go back to home</a> and try again.</p>
+        <p className="text-lg text-gray-600">Please <Link to="/" className="text-blue-500 hover:text-blue-700">go back to home</Link> and try again.</p>
       </div>
     </div>
   );

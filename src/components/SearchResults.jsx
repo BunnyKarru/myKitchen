@@ -34,8 +34,11 @@ function SearchResults() {
       }
     }
 
+ 
     if (query) {
       fetchResults();
+    } else {
+      navigate('/')
     }
   }, [query]);
 
