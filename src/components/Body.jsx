@@ -28,13 +28,13 @@ function Body() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 mt-6">
+    <section className="container mx-auto px-4 mt-6">
       <div className="mb-4">
         <p className="font-bold text-2xl text-gray-900 text-center md:text-left">
           My kitchen's a little lonely. Maybe you could spice things up?
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
         {isLoading ? (
           <div className="w-full flex justify-center items-center">
             <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-orange-400"></div>
@@ -51,8 +51,8 @@ function Body() {
           ))
         )}
       </div>
-      <div className="w-full  h-px bg-gray-300 mt-8 mb-3"></div>
-    </div>
+      <div className="w-full h-px bg-gray-300 mt-8 mb-3"></div>
+    </section>
   );
 }
 
