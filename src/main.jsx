@@ -7,6 +7,7 @@ import Page from './components/Page.jsx';
 import SearchResults from './components/SearchResults.jsx';
 import NoResults from './components/NoResults.jsx';
 import FoodItem from './components/FoodItem.jsx';
+import AboutUs from './components/AboutUs.jsx';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/foodItem" element={<FoodItem />} />
       <Route path="/searchResults" element={<SearchResults />} />
       <Route path="/noresults" element={<NoResults />} />
+      <Route path="/aboutUs" element={<AboutUs/>} />
     </Route>
   </Routes>
 </BrowserRouter>

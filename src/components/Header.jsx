@@ -48,7 +48,7 @@ function Header() {
 
       {/* Favorite Icon */}
       <div className="hidden md:flex items-center">
-        <Link to="/favorites" className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition duration-300">
+        <Link to="/aboutUs" className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition duration-300">
           <img src={logo} className="w-6 h-6" alt="Favorite" />
         </Link>
       </div>
