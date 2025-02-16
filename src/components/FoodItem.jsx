@@ -1,11 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react';
-import IdContext from '../Context/IdContext';
-
+import { useParams } from 'react-router-dom';
+import logo from '../assets/icons8-heart-100.png';
+import like from "../assets/icons8-favorite-100.png"
+import Cart from '../Context/Cart';
+import CartContext from "../Context/CartContext"
 function FoodItem() {
-  const { id } = useContext(IdContext);
-  const [foodDetails, setFoodDetails] = useState(null);
 
+  const [foodDetails, setFoodDetails] = useState(null);
+  const [toggle,settoggle] = useState(false)
+  const {id} = useParams('id')
+  const {cart,setcart} = useContext(Cart)
+  const liked=(id)=>{
+    
+    settoggle(!toggle)
+    setcart(cart=>[...cart,id])
+  }
+console.log(cart)
   useEffect(() => {
+    
     async function fetchData() {
       try {
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
@@ -49,8 +61,11 @@ function FoodItem() {
   return (
     <div className="container mx-auto py-8">
       <div className="max-w-7xl mx-auto rounded-lg overflow-hidden shadow-lg bg-white">
+      
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          
           <div className="relative">
+      
             <img src={foodDetails.strMealThumb} alt={foodDetails.strMeal} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
             <div className="absolute inset-0 flex items-center justify-center">
@@ -58,7 +73,13 @@ function FoodItem() {
             </div>
           </div>
           <div className="p-6 md:bg-gradient-to-r from-white to-orange-50">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Recipe Details</h2>
+            <div className='flex flex-row justify-between'><h2 className="text-2xl font-semibold text-gray-800 mb-2">Recipe Details</h2>
+            {
+           
+                       <img src={toggle?like:logo} onClick={()=>liked(foodDetails)} className="w-6 h-6" alt="Favorite" />
+ 
+          }
+            </div>
             <p className="text-lg text-gray-600 mb-1">Name  : {foodDetails.strMeal}</p>
             <p className="text-lg text-gray-600 mb-1">Category: {foodDetails.strCategory}</p>
             <p className="text-lg text-gray-600 mb-1">Cuisine: {foodDetails.strArea}</p>

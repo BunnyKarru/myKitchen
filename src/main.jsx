@@ -8,6 +8,7 @@ import SearchResults from './components/SearchResults.jsx';
 import NoResults from './components/NoResults.jsx';
 import FoodItem from './components/FoodItem.jsx';
 import AboutUs from './components/AboutUs.jsx';
+import Wishlist from './components/wishlist.jsx';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -17,13 +18,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<Page />} />
-      <Route path="/foodItem" element={<FoodItem />} />
-      <Route path="/searchResults" element={<SearchResults />} />
+      <Route path="/foodItem/:id" element={<FoodItem />} />
+      <Route path="/searchResults/:str" element={<SearchResults />} />
       <Route path="/noresults" element={<NoResults />} />
       <Route path="/aboutUs" element={<AboutUs/>} />
-    </Route>
+      <Route path="/WishList" element={<Wishlist/>} />
+
+      </Route>
   </Routes>
 </BrowserRouter>
+
 )
 
   
