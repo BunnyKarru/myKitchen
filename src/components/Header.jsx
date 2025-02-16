@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '../assets/icons8-favorite-100.png';
-import IdContext from "../Context/IdContext";
+import logo from '../assets/icons8-heart-100.png';
+import IdContext from "../Context/Cart";
 
 function Header() {
   const { setQuery } = useContext(IdContext);
@@ -11,8 +11,8 @@ function Header() {
   const handleSearch = (e) => {
     e.preventDefault();
     if (str.trim()) {
-      setQuery(str); 
-      navigate('/searchResults'); // Update the context with the query string
+      
+      navigate(`/searchResults/${str}`); // Update the context with the query string
     }
   };
 
@@ -48,8 +48,8 @@ function Header() {
 
       {/* Favorite Icon */}
       <div className="hidden md:flex items-center">
-        <Link to="/aboutUs" className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition duration-300">
-          <img src={logo} className="w-6 h-6" alt="Favorite" />
+        <Link to="/WishList" className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition duration-300">
+          <img src={logo}  className="w-6 h-6 bg-re" alt="Favorite" />
         </Link>
       </div>
     </header>
