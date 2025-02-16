@@ -9,7 +9,7 @@ function Layout() {
       <CartContextProvide>
         <Header />
         <Outlet />
-      </CartContextProvide\>
+      </CartContextProvide>
     </>
   );
 }
