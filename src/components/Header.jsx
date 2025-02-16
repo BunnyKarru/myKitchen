@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/icons8-heart-100.png';
-import IdContext from "../Context/Cart";
 
 function Header() {
-  const { setQuery } = useContext(IdContext);
+
   const [str, setStr] = useState('');
   const navigate = useNavigate();
 
